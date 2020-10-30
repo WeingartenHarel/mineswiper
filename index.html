@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body onload="initGame(8,12,3)">  <!-- init game with number of size,mines,lives-->
+    <div class="container">
+        <div class="headLine">
+            <div class="headerLeft">
+                <button id="button-smiley" data-size="0" data-mines="0" data-lives="0" class="buttonStyleRound green" onclick="initGame(this.dataset.size,this.dataset.mines,this.dataset.lives)">&#128578</button>
+                <h2>Mine Sweeper</h2>
+            </div>
+            <audio id="gameSound" src="media/Game-Menu_Looping.mp3"  controls autoplay loop preload="auto">
+                <source src="media/Game-Menu_Looping.mp3" type="audio/ogg">
+                Your browser does not support the
+                <code>audio </code> element.
+            </audio>
+            <div class="headerRight">
+                <div class="lives-container">Lives: <span class="lives"></span></div>
+                <div>time = <span id="timer">0</span> </div>
+            </div>
+        </div>
+            <div class="level-container">
+                <button class="buttonStyle blue" onclick="initGame(4,2,1)">Beginner</button>
+                <button class="buttonStyle blue" onclick="initGame(8,12,3)">Medium</button>
+                <button class="buttonStyle blue" onclick="initGame(12,30,3)">Expert</button>
+            </div>
+            <div id="tableId" class="board-container reflect"></div>
+            <div class="modal-container displayNone">
+                <div class="messege">PLAY</div>
+                <button class="buttonStyle blue" onclick="playAgainYes()">Yes</button>
+                <button class="buttonStyle red" onclick="playAgainNo()">No</button>
+            </div>
+        </div>
+
+
+    <script src="js/utils.js"></script>
+    <script src="js/game.js"></script>
+    <link rel="stylesheet" href="css/app.css">
+</body>
+</html>
